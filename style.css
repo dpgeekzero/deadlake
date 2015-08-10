@@ -1,6 +1,7 @@
 body {
   padding-top: 80px;
   margin-bottom: 30px;
+  font-size: 18px;
 }
 .logo {
   font-family: 'Architects Daughter', cursive;
@@ -15,10 +16,13 @@ html {
   position: relative;
   min-height: 100%;
 }
-.row {
+.panel {
   padding-top: 40px;
 }
 
+li {
+  font-size: 15px;
+}
 .footer {
   position: absolute;
   bottom: 0;

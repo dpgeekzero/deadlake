@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
-var child_process = require('child_process')
+var child_process = require('child_process');
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  output = child_process.execFileSync('/bin/bash', ['build.sh'])
-  res.send('re-deploying: ' + output);
+  var build_path = path.join(__dirname, '..', 'build.sh');
+  var root_path = path.join(__dirname, '..', '..');
+  child_process.execFile('/bin/bash', [build_path], {cwd: root_path}, function(err, stdout, stderr) {
+    res.render('deploy', {stdout: stdout, stderr: stderr});
+  });
 
 });
 

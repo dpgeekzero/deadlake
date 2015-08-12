@@ -22,6 +22,10 @@ html {
 
 li {
   font-size: 15px;
+  margin-top: 10px;
+}
+p {
+  margin-top: 10px;
 }
 .footer {
   position: absolute;
